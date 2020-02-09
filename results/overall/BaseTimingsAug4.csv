@@ -1,0 +1,26 @@
+Instance Name, CC2 Result, CLEVER Result, Reve Result
+./eq/Add , equiv; 0.137600, equiv; 0.075900, equiv; 0.020000
+./eq/Const , equiv; 0.118000, equiv; 0.076800, equiv; 0.020000
+./eq/LoopMult20 , equiv; 1.500900, equiv; 0.368000, timeout; 300.000000
+./eq/LoopUnreach20 , equiv; 0.897800, equiv; 0.122300, equiv; 0.030000
+./eq/UnchLoop , equiv; 40.235800, equiv; 0.093700, equiv; 1.070000
+./eq/divide , equiv; 0.164500, equiv; 0.105000, equiv; 0.020000
+./eq/getSign2 , equiv; 0.828500, equiv; 0.134400, equiv; 0.020000
+./eq/is_prime1 , equiv; 0.927200, equiv; 0.084600, unknown; 0.020000
+./eq/is_prime2 , not equiv; 1.365500, not equiv; 0.693700, unknown; 0.020000
+./eq/is_prime3 , equiv; 3.863700, equiv; 0.780600, unknown; 0.020000
+./eq/ltfive , not equiv; 0.613300, not equiv; 0.188500, equiv; 0.030000
+./eq/ltfiveBound , equiv; 0.403200, equiv; 0.247800, equiv; 0.040000
+./eq/multiple , not equiv; 0.432500, not equiv; 0.228000, equiv; 0.020000
+./eq/multipleBound , equiv; 0.996100, equiv; 0.311100, equiv; 0.030000
+./eq/odd , equiv; 12.343100, timeout; 300.000000, unknown; 0.020000
+./eq/one , not equiv; 0.575800, not equiv; 0.154900, not equiv; 0.020000
+./eq/oneBound , equiv; 0.369400, equiv; 0.180400, equiv; 0.040000
+./eq/oneN2 , not equiv; 0.539600, not equiv; 0.164400, equiv; 0.020000
+./eq/pos , equiv; 11.032800, timeout; 300.000000, unknown; 0.020000
+./eq/pos2 , equiv; 0.208500, timeout; 300.000000, not equiv; 0.040000
+./eq/pos3 , equiv; 0.807000, equiv; 0.099200, equiv; 0.020000
+./extras/ultra_prime_sum , equiv; 84.262200, timeout; 300.000000, unknown; 0.030000
+./neq/LoopMult20 , not equiv; 2.026400, not equiv; 0.306300, not equiv; 0.170000
+./neq/LoopUnreach20 , not equiv; 0.332400, not equiv; 0.126000, not equiv; 0.030000
+./neq/getSign , not equiv; 0.320400, not equiv; 0.121600, not equiv; 0.020000

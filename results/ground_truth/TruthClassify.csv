@@ -1,0 +1,730 @@
+./mergedHard/NEQ_getSignEQ_odd/libA   #: not equiv
+./mergedHard/NEQ_getSignEQ_odd/libB   #: not equiv
+./mergedHard/NEQ_getSignEQ_pos2/libA  #: not equiv
+./mergedHard/NEQ_getSignEQ_pos2/libB  #: equiv
+./mergedHard/NEQ_getSignEQ_is_prime2/libA #: not equiv
+./mergedHard/NEQ_getSignEQ_is_prime2/libB #: not equiv
+./mergedHard/NEQ_getSignEQ_pos/libA   #: not equiv
+./mergedHard/NEQ_getSignEQ_pos/libB   #: not equiv
+./mergedHard/NEQ_getSignEQ_UnchLoop/libA #: not equiv
+./mergedHard/NEQ_getSignEQ_UnchLoop/libB #: equiv
+./mergedHard/NEQ_getSignEQ_LoopMult20/libA #: not equiv
+./mergedHard/NEQ_getSignEQ_LoopMult20/libB #: equiv
+./mergedHard/NEQ_getSignEXTRA_prime_sum/libA #: not equiv
+./mergedHard/NEQ_getSignEXTRA_prime_sum/libB #: not equiv
+./mergedHard/NEQ_getSignEXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/NEQ_getSignEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_odd/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_odd/libB #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_pos2/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_pos2/libB #: equiv
+./mergedHard/NEQ_LoopUnreach20EQ_is_prime2/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_is_prime2/libB #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_pos/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_pos/libB #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_UnchLoop/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_UnchLoop/libB #: equiv
+./mergedHard/NEQ_LoopUnreach20EQ_LoopMult20/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EQ_LoopMult20/libB #: equiv
+./mergedHard/NEQ_LoopUnreach20EXTRA_prime_sum/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EXTRA_prime_sum/libB #: not equiv
+./mergedHard/NEQ_LoopUnreach20EXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/NEQ_LoopUnreach20EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_odd/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_odd/libB #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_pos2/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_pos2/libB #: equiv
+./mergedHard/NEQ_LoopMult20EQ_is_prime2/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_is_prime2/libB #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_pos/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_pos/libB #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_UnchLoop/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_UnchLoop/libB #: equiv
+./mergedHard/NEQ_LoopMult20EQ_LoopMult20/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EQ_LoopMult20/libB #: equiv
+./mergedHard/NEQ_LoopMult20EXTRA_prime_sum/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EXTRA_prime_sum/libB #: not equiv
+./mergedHard/NEQ_LoopMult20EXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/NEQ_LoopMult20EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_oneN2EQ_odd/libA      #: not equiv
+./mergedHard/EQ_oneN2EQ_odd/libB      #: not equiv
+./mergedHard/EQ_oneN2EQ_pos2/libA     #: not equiv
+./mergedHard/EQ_oneN2EQ_pos2/libB     #: equiv
+./mergedHard/EQ_oneN2EQ_is_prime2/libA #: not equiv
+./mergedHard/EQ_oneN2EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_oneN2EQ_pos/libA      #: not equiv
+./mergedHard/EQ_oneN2EQ_pos/libB      #: equiv
+./mergedHard/EQ_oneN2EQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_oneN2EQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_oneN2EQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_oneN2EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_oneN2EXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_oneN2EXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_oneN2EXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_oneN2EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_getSign2EQ_odd/libA   #: not equiv
+./mergedHard/EQ_getSign2EQ_odd/libB   #: not equiv
+./mergedHard/EQ_getSign2EQ_pos2/libA  #: not equiv
+./mergedHard/EQ_getSign2EQ_pos2/libB  #: equiv
+./mergedHard/EQ_getSign2EQ_is_prime2/libA #: equiv
+./mergedHard/EQ_getSign2EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_getSign2EQ_pos/libA   #: not equiv
+./mergedHard/EQ_getSign2EQ_pos/libB   #: not equiv
+./mergedHard/EQ_getSign2EQ_UnchLoop/libA #: equiv
+./mergedHard/EQ_getSign2EQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_getSign2EQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_getSign2EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_getSign2EXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_getSign2EXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_getSign2EXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_getSign2EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_AddEQ_odd/libA        #: equiv
+./mergedHard/EQ_AddEQ_odd/libB        #: equiv
+./mergedHard/EQ_AddEQ_pos2/libA       #: equiv
+./mergedHard/EQ_AddEQ_pos2/libB       #: equiv
+./mergedHard/EQ_AddEQ_is_prime2/libA  #: equiv
+./mergedHard/EQ_AddEQ_is_prime2/libB  #: not equiv
+./mergedHard/EQ_AddEQ_pos/libA        #: equiv
+./mergedHard/EQ_AddEQ_pos/libB        #: not equiv
+./mergedHard/EQ_AddEQ_UnchLoop/libA   #: equiv
+./mergedHard/EQ_AddEQ_UnchLoop/libB   #: equiv
+./mergedHard/EQ_AddEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_AddEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_AddEXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_AddEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_AddEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_AddEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_oddNEQ_getSign/libA   #: not equiv
+./mergedHard/EQ_oddNEQ_getSign/libB   #: not equiv
+./mergedHard/EQ_oddNEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EQ_oddNEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EQ_oddNEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_oddNEQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_oddEQ_oneN2/libA      #: not equiv
+./mergedHard/EQ_oddEQ_oneN2/libB      #: not equiv
+./mergedHard/EQ_oddEQ_getSign2/libA   #: not equiv
+./mergedHard/EQ_oddEQ_getSign2/libB   #: not equiv
+./mergedHard/EQ_oddEQ_Add/libA        #: equiv
+./mergedHard/EQ_oddEQ_Add/libB        #: equiv
+./mergedHard/EQ_oddEQ_odd/libA        #: equiv
+./mergedHard/EQ_oddEQ_odd/libB        #: equiv
+./mergedHard/EQ_oddEQ_pos3/libA       #: not equiv
+./mergedHard/EQ_oddEQ_pos3/libB       #: equiv
+./mergedHard/EQ_oddEQ_pos2/libA       #: not equiv
+./mergedHard/EQ_oddEQ_pos2/libB       #: equiv
+./mergedHard/EQ_oddEQ_ltfiveBound/libA #: not equiv
+./mergedHard/EQ_oddEQ_ltfiveBound/libB #: not equiv
+./mergedHard/EQ_oddEQ_one/libA        #: not equiv
+./mergedHard/EQ_oddEQ_one/libB        #: not equiv
+./mergedHard/EQ_oddEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EQ_oddEQ_LoopUnreach20/libB #: equiv
+./mergedHard/EQ_oddEQ_is_prime2/libA  #: not equiv
+./mergedHard/EQ_oddEQ_is_prime2/libB  #: not equiv
+./mergedHard/EQ_oddEQ_multipleBound/libA #: equiv
+./mergedHard/EQ_oddEQ_multipleBound/libB #: not equiv
+./mergedHard/EQ_oddEQ_pos/libA        #: not equiv
+./mergedHard/EQ_oddEQ_pos/libB        #: not equiv
+./mergedHard/EQ_oddEQ_ltfive/libA     #: not equiv
+./mergedHard/EQ_oddEQ_ltfive/libB     #: not equiv
+./mergedHard/EQ_oddEQ_multiple/libA   #: equiv
+./mergedHard/EQ_oddEQ_multiple/libB   #: not equiv
+./mergedHard/EQ_oddEQ_Const/libA      #: equiv
+./mergedHard/EQ_oddEQ_Const/libB      #: equiv
+./mergedHard/EQ_oddEQ_oneBound/libA   #: not equiv
+./mergedHard/EQ_oddEQ_oneBound/libB   #: not equiv
+./mergedHard/EQ_oddEQ_is_prime3/libA  #: not equiv
+./mergedHard/EQ_oddEQ_is_prime3/libB  #: not equiv
+./mergedHard/EQ_oddEQ_is_prime1/libA  #: not equiv
+./mergedHard/EQ_oddEQ_is_prime1/libB  #: not equiv
+./mergedHard/EQ_oddEQ_divide/libA     #: not equiv
+./mergedHard/EQ_oddEQ_divide/libB     #: equiv
+./mergedHard/EQ_oddEQ_UnchLoop/libA   #: equiv
+./mergedHard/EQ_oddEQ_UnchLoop/libB   #: equiv
+./mergedHard/EQ_oddEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_oddEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_oddEXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_oddEXTRA_prime_sum/libB #: equiv
+./mergedHard/EQ_oddEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_oddEXTRA_ultra_prime_sum/libB #: equiv
+./mergedHard/EQ_pos3EQ_odd/libA       #: equiv
+./mergedHard/EQ_pos3EQ_odd/libB       #: not equiv
+./mergedHard/EQ_pos3EQ_pos2/libA      #: equiv
+./mergedHard/EQ_pos3EQ_pos2/libB      #: equiv
+./mergedHard/EQ_pos3EQ_is_prime2/libA #: equiv
+./mergedHard/EQ_pos3EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_pos3EQ_pos/libA       #: equiv
+./mergedHard/EQ_pos3EQ_pos/libB       #: equiv
+./mergedHard/EQ_pos3EQ_UnchLoop/libA  #: equiv
+./mergedHard/EQ_pos3EQ_UnchLoop/libB  #: equiv
+./mergedHard/EQ_pos3EQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_pos3EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_pos3EXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_pos3EXTRA_prime_sum/libB #: equiv
+./mergedHard/EQ_pos3EXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_pos3EXTRA_ultra_prime_sum/libB #: equiv
+./mergedHard/EQ_pos2NEQ_getSign/libA  #: equiv
+./mergedHard/EQ_pos2NEQ_getSign/libB  #: not equiv
+./mergedHard/EQ_pos2NEQ_LoopUnreach20/libA #: equiv
+./mergedHard/EQ_pos2NEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EQ_pos2NEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_pos2NEQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_pos2EQ_oneN2/libA     #: equiv
+./mergedHard/EQ_pos2EQ_oneN2/libB     #: not equiv
+./mergedHard/EQ_pos2EQ_getSign2/libA  #: equiv
+./mergedHard/EQ_pos2EQ_getSign2/libB  #: not equiv
+./mergedHard/EQ_pos2EQ_Add/libA       #: equiv
+./mergedHard/EQ_pos2EQ_Add/libB       #: equiv
+./mergedHard/EQ_pos2EQ_odd/libA       #: equiv
+./mergedHard/EQ_pos2EQ_odd/libB       #: not equiv
+./mergedHard/EQ_pos2EQ_pos3/libA      #: equiv
+./mergedHard/EQ_pos2EQ_pos3/libB      #: equiv
+./mergedHard/EQ_pos2EQ_pos2/libA      #: equiv
+./mergedHard/EQ_pos2EQ_pos2/libB      #: equiv
+./mergedHard/EQ_pos2EQ_ltfiveBound/libA #: equiv
+./mergedHard/EQ_pos2EQ_ltfiveBound/libB #: not equiv
+./mergedHard/EQ_pos2EQ_one/libA       #: equiv
+./mergedHard/EQ_pos2EQ_one/libB       #: not equiv
+./mergedHard/EQ_pos2EQ_LoopUnreach20/libA #: equiv
+./mergedHard/EQ_pos2EQ_LoopUnreach20/libB #: equiv
+./mergedHard/EQ_pos2EQ_is_prime2/libA #: equiv
+./mergedHard/EQ_pos2EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_pos2EQ_multipleBound/libA #: equiv
+./mergedHard/EQ_pos2EQ_multipleBound/libB #: not equiv
+./mergedHard/EQ_pos2EQ_pos/libA       #: equiv
+./mergedHard/EQ_pos2EQ_pos/libB       #: equiv
+./mergedHard/EQ_pos2EQ_ltfive/libA    #: equiv
+./mergedHard/EQ_pos2EQ_ltfive/libB    #: not equiv
+./mergedHard/EQ_pos2EQ_multiple/libA  #: equiv
+./mergedHard/EQ_pos2EQ_multiple/libB  #: not equiv
+./mergedHard/EQ_pos2EQ_Const/libA     #: equiv
+./mergedHard/EQ_pos2EQ_Const/libB     #: equiv
+./mergedHard/EQ_pos2EQ_oneBound/libA  #: equiv
+./mergedHard/EQ_pos2EQ_oneBound/libB  #: not equiv
+./mergedHard/EQ_pos2EQ_is_prime3/libA #: equiv
+./mergedHard/EQ_pos2EQ_is_prime3/libB #: equiv
+./mergedHard/EQ_pos2EQ_is_prime1/libA #: equiv
+./mergedHard/EQ_pos2EQ_is_prime1/libB #: equiv
+./mergedHard/EQ_pos2EQ_divide/libA    #: equiv
+./mergedHard/EQ_pos2EQ_divide/libB    #: equiv
+./mergedHard/EQ_pos2EQ_UnchLoop/libA  #: equiv
+./mergedHard/EQ_pos2EQ_UnchLoop/libB  #: equiv
+./mergedHard/EQ_pos2EQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_pos2EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_pos2EXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_pos2EXTRA_prime_sum/libB #: equiv
+./mergedHard/EQ_pos2EXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_pos2EXTRA_ultra_prime_sum/libB #: equiv
+./mergedHard/EQ_ltfiveBoundEQ_odd/libA #: not equiv
+./mergedHard/EQ_ltfiveBoundEQ_odd/libB #: not equiv
+./mergedHard/EQ_ltfiveBoundEQ_pos2/libA #: not equiv
+./mergedHard/EQ_ltfiveBoundEQ_pos2/libB #: equiv
+./mergedHard/EQ_ltfiveBoundEQ_is_prime2/libA #: equiv
+./mergedHard/EQ_ltfiveBoundEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_ltfiveBoundEQ_pos/libA #: not equiv
+./mergedHard/EQ_ltfiveBoundEQ_pos/libB #: not equiv
+./mergedHard/EQ_ltfiveBoundEQ_UnchLoop/libA #: equiv
+./mergedHard/EQ_ltfiveBoundEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_ltfiveBoundEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_ltfiveBoundEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_ltfiveBoundEXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_ltfiveBoundEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_ltfiveBoundEXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_ltfiveBoundEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_oneEQ_odd/libA        #: not equiv
+./mergedHard/EQ_oneEQ_odd/libB        #: not equiv
+./mergedHard/EQ_oneEQ_pos2/libA       #: not equiv
+./mergedHard/EQ_oneEQ_pos2/libB       #: equiv
+./mergedHard/EQ_oneEQ_is_prime2/libA  #: not equiv
+./mergedHard/EQ_oneEQ_is_prime2/libB  #: not equiv
+./mergedHard/EQ_oneEQ_pos/libA        #: not equiv
+./mergedHard/EQ_oneEQ_pos/libB        #: equiv
+./mergedHard/EQ_oneEQ_UnchLoop/libA   #: not equiv
+./mergedHard/EQ_oneEQ_UnchLoop/libB   #: equiv
+./mergedHard/EQ_oneEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_oneEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_oneEXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_oneEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_oneEXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_oneEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_LoopUnreach20EQ_odd/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_odd/libB #: not equiv
+./mergedHard/EQ_LoopUnreach20EQ_pos2/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_pos2/libB #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_is_prime2/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_LoopUnreach20EQ_pos/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_pos/libB #: not equiv
+./mergedHard/EQ_LoopUnreach20EQ_UnchLoop/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_LoopUnreach20EXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_LoopUnreach20EXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_LoopUnreach20EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_is_prime2NEQ_getSign/libA #: not equiv
+./mergedHard/EQ_is_prime2NEQ_getSign/libB #: not equiv
+./mergedHard/EQ_is_prime2NEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EQ_is_prime2NEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EQ_is_prime2NEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_is_prime2NEQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_oneN2/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_oneN2/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_getSign2/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_getSign2/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_Add/libA  #: not equiv
+./mergedHard/EQ_is_prime2EQ_Add/libB  #: equiv
+./mergedHard/EQ_is_prime2EQ_odd/libA  #: not equiv
+./mergedHard/EQ_is_prime2EQ_odd/libB  #: not equiv
+./mergedHard/EQ_is_prime2EQ_pos3/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_pos3/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_pos2/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_pos2/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_ltfiveBound/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_ltfiveBound/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_one/libA  #: not equiv
+./mergedHard/EQ_is_prime2EQ_one/libB  #: not equiv
+./mergedHard/EQ_is_prime2EQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_LoopUnreach20/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_is_prime2/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_multipleBound/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_multipleBound/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_pos/libA  #: not equiv
+./mergedHard/EQ_is_prime2EQ_pos/libB  #: not equiv
+./mergedHard/EQ_is_prime2EQ_ltfive/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_ltfive/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_multiple/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_multiple/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_Const/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_Const/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_oneBound/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_oneBound/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_is_prime3/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_is_prime3/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_is_prime1/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_is_prime1/libB #: not equiv
+./mergedHard/EQ_is_prime2EQ_divide/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_divide/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_is_prime2EQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_is_prime2EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_is_prime2EXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_is_prime2EXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_is_prime2EXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_is_prime2EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_multipleBoundEQ_odd/libA #: not equiv
+./mergedHard/EQ_multipleBoundEQ_odd/libB #: equiv
+./mergedHard/EQ_multipleBoundEQ_pos2/libA #: not equiv
+./mergedHard/EQ_multipleBoundEQ_pos2/libB #: equiv
+./mergedHard/EQ_multipleBoundEQ_is_prime2/libA #: not equiv
+./mergedHard/EQ_multipleBoundEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_multipleBoundEQ_pos/libA #: not equiv
+./mergedHard/EQ_multipleBoundEQ_pos/libB #: not equiv
+./mergedHard/EQ_multipleBoundEQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_multipleBoundEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_multipleBoundEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_multipleBoundEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_multipleBoundEXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_multipleBoundEXTRA_prime_sum/libB #: equiv
+./mergedHard/EQ_multipleBoundEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_multipleBoundEXTRA_ultra_prime_sum/libB #: equiv
+./mergedHard/EQ_posNEQ_getSign/libA   #: not equiv
+./mergedHard/EQ_posNEQ_getSign/libB   #: not equiv
+./mergedHard/EQ_posNEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EQ_posNEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EQ_posNEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_posNEQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_posEQ_oneN2/libA      #: equiv
+./mergedHard/EQ_posEQ_oneN2/libB      #: not equiv
+./mergedHard/EQ_posEQ_getSign2/libA   #: not equiv
+./mergedHard/EQ_posEQ_getSign2/libB   #: not equiv
+./mergedHard/EQ_posEQ_Add/libA        #: not equiv
+./mergedHard/EQ_posEQ_Add/libB        #: equiv
+./mergedHard/EQ_posEQ_odd/libA        #: not equiv
+./mergedHard/EQ_posEQ_odd/libB        #: not equiv
+./mergedHard/EQ_posEQ_pos3/libA       #: equiv
+./mergedHard/EQ_posEQ_pos3/libB       #: equiv
+./mergedHard/EQ_posEQ_pos2/libA       #: equiv
+./mergedHard/EQ_posEQ_pos2/libB       #: equiv
+./mergedHard/EQ_posEQ_ltfiveBound/libA #: not equiv
+./mergedHard/EQ_posEQ_ltfiveBound/libB #: not equiv
+./mergedHard/EQ_posEQ_one/libA        #: equiv
+./mergedHard/EQ_posEQ_one/libB        #: not equiv
+./mergedHard/EQ_posEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EQ_posEQ_LoopUnreach20/libB #: equiv
+./mergedHard/EQ_posEQ_is_prime2/libA  #: not equiv
+./mergedHard/EQ_posEQ_is_prime2/libB  #: not equiv
+./mergedHard/EQ_posEQ_multipleBound/libA #: not equiv
+./mergedHard/EQ_posEQ_multipleBound/libB #: not equiv
+./mergedHard/EQ_posEQ_pos/libA        #: equiv
+./mergedHard/EQ_posEQ_pos/libB        #: equiv
+./mergedHard/EQ_posEQ_ltfive/libA     #: not equiv
+./mergedHard/EQ_posEQ_ltfive/libB     #: not equiv
+./mergedHard/EQ_posEQ_multiple/libA   #: not equiv
+./mergedHard/EQ_posEQ_multiple/libB   #: not equiv
+./mergedHard/EQ_posEQ_Const/libA      #: not equiv
+./mergedHard/EQ_posEQ_Const/libB      #: equiv
+./mergedHard/EQ_posEQ_oneBound/libA   #: equiv
+./mergedHard/EQ_posEQ_oneBound/libB   #: not equiv
+./mergedHard/EQ_posEQ_is_prime3/libA  #: not equiv
+./mergedHard/EQ_posEQ_is_prime3/libB  #: equiv
+./mergedHard/EQ_posEQ_is_prime1/libA  #: not equiv
+./mergedHard/EQ_posEQ_is_prime1/libB  #: equiv
+./mergedHard/EQ_posEQ_divide/libA     #: not equiv
+./mergedHard/EQ_posEQ_divide/libB     #: equiv
+./mergedHard/EQ_posEQ_UnchLoop/libA   #: not equiv
+./mergedHard/EQ_posEQ_UnchLoop/libB   #: equiv
+./mergedHard/EQ_posEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_posEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_posEXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_posEXTRA_prime_sum/libB #: equiv
+./mergedHard/EQ_posEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_posEXTRA_ultra_prime_sum/libB #: equiv
+./mergedHard/EQ_ltfiveEQ_odd/libA     #: not equiv
+./mergedHard/EQ_ltfiveEQ_odd/libB     #: not equiv
+./mergedHard/EQ_ltfiveEQ_pos2/libA    #: not equiv
+./mergedHard/EQ_ltfiveEQ_pos2/libB    #: equiv
+./mergedHard/EQ_ltfiveEQ_is_prime2/libA #: not equiv
+./mergedHard/EQ_ltfiveEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_ltfiveEQ_pos/libA     #: not equiv
+./mergedHard/EQ_ltfiveEQ_pos/libB     #: not equiv
+./mergedHard/EQ_ltfiveEQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_ltfiveEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_ltfiveEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_ltfiveEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_ltfiveEXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_ltfiveEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_ltfiveEXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_ltfiveEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_multipleEQ_odd/libA   #: not equiv
+./mergedHard/EQ_multipleEQ_odd/libB   #: equiv
+./mergedHard/EQ_multipleEQ_pos2/libA  #: not equiv
+./mergedHard/EQ_multipleEQ_pos2/libB  #: equiv
+./mergedHard/EQ_multipleEQ_is_prime2/libA #: not equiv
+./mergedHard/EQ_multipleEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_multipleEQ_pos/libA   #: not equiv
+./mergedHard/EQ_multipleEQ_pos/libB   #: not equiv
+./mergedHard/EQ_multipleEQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_multipleEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_multipleEQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_multipleEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_multipleEXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_multipleEXTRA_prime_sum/libB #: equiv
+./mergedHard/EQ_multipleEXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_multipleEXTRA_ultra_prime_sum/libB #: equiv
+./mergedHard/EQ_ConstEQ_odd/libA      #: equiv
+./mergedHard/EQ_ConstEQ_odd/libB      #: equiv
+./mergedHard/EQ_ConstEQ_pos2/libA     #: equiv
+./mergedHard/EQ_ConstEQ_pos2/libB     #: equiv
+./mergedHard/EQ_ConstEQ_is_prime2/libA #: equiv
+./mergedHard/EQ_ConstEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_ConstEQ_pos/libA      #: equiv
+./mergedHard/EQ_ConstEQ_pos/libB      #: not equiv
+./mergedHard/EQ_ConstEQ_UnchLoop/libA #: equiv
+./mergedHard/EQ_ConstEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_ConstEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_ConstEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_ConstEXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_ConstEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_ConstEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_ConstEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_oneBoundEQ_odd/libA   #: not equiv
+./mergedHard/EQ_oneBoundEQ_odd/libB   #: not equiv
+./mergedHard/EQ_oneBoundEQ_pos2/libA  #: not equiv
+./mergedHard/EQ_oneBoundEQ_pos2/libB  #: equiv
+./mergedHard/EQ_oneBoundEQ_is_prime2/libA #: equiv
+./mergedHard/EQ_oneBoundEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_oneBoundEQ_pos/libA   #: not equiv
+./mergedHard/EQ_oneBoundEQ_pos/libB   #: equiv
+./mergedHard/EQ_oneBoundEQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_oneBoundEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_oneBoundEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_oneBoundEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_oneBoundEXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_oneBoundEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_oneBoundEXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_oneBoundEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_is_prime3EQ_odd/libA  #: not equiv
+./mergedHard/EQ_is_prime3EQ_odd/libB  #: not equiv
+./mergedHard/EQ_is_prime3EQ_pos2/libA #: equiv
+./mergedHard/EQ_is_prime3EQ_pos2/libB #: equiv
+./mergedHard/EQ_is_prime3EQ_is_prime2/libA #: not equiv
+./mergedHard/EQ_is_prime3EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_is_prime3EQ_pos/libA  #: equiv
+./mergedHard/EQ_is_prime3EQ_pos/libB  #: not equiv
+./mergedHard/EQ_is_prime3EQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_is_prime3EQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_is_prime3EQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_is_prime3EQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_is_prime3EXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_is_prime3EXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_is_prime3EXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_is_prime3EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_is_prime1EQ_odd/libA  #: not equiv
+./mergedHard/EQ_is_prime1EQ_odd/libB  #: not equiv
+./mergedHard/EQ_is_prime1EQ_pos2/libA #: equiv
+./mergedHard/EQ_is_prime1EQ_pos2/libB #: equiv
+./mergedHard/EQ_is_prime1EQ_is_prime2/libA #: not equiv
+./mergedHard/EQ_is_prime1EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_is_prime1EQ_pos/libA  #: equiv
+./mergedHard/EQ_is_prime1EQ_pos/libB  #: not equiv
+./mergedHard/EQ_is_prime1EQ_UnchLoop/libA #: not equiv
+./mergedHard/EQ_is_prime1EQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_is_prime1EQ_LoopMult20/libA #: not equiv
+./mergedHard/EQ_is_prime1EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_is_prime1EXTRA_prime_sum/libA #: not equiv
+./mergedHard/EQ_is_prime1EXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_is_prime1EXTRA_ultra_prime_sum/libA #: not equiv
+./mergedHard/EQ_is_prime1EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_divideEQ_odd/libA     #: equiv
+./mergedHard/EQ_divideEQ_odd/libB     #: not equiv
+./mergedHard/EQ_divideEQ_pos2/libA    #: equiv
+./mergedHard/EQ_divideEQ_pos2/libB    #: equiv
+./mergedHard/EQ_divideEQ_is_prime2/libA #: equiv
+./mergedHard/EQ_divideEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_divideEQ_pos/libA     #: equiv
+./mergedHard/EQ_divideEQ_pos/libB     #: not equiv
+./mergedHard/EQ_divideEQ_UnchLoop/libA #: equiv
+./mergedHard/EQ_divideEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_divideEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_divideEQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_divideEXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_divideEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_divideEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_divideEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_UnchLoopNEQ_getSign/libA #: equiv
+./mergedHard/EQ_UnchLoopNEQ_getSign/libB #: not equiv
+./mergedHard/EQ_UnchLoopNEQ_LoopUnreach20/libA #: equiv
+./mergedHard/EQ_UnchLoopNEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EQ_UnchLoopNEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_UnchLoopNEQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_oneN2/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_oneN2/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_getSign2/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_getSign2/libB #: equiv
+./mergedHard/EQ_UnchLoopEQ_Add/libA   #: equiv
+./mergedHard/EQ_UnchLoopEQ_Add/libB   #: equiv
+./mergedHard/EQ_UnchLoopEQ_odd/libA   #: equiv
+./mergedHard/EQ_UnchLoopEQ_odd/libB   #: equiv
+./mergedHard/EQ_UnchLoopEQ_pos3/libA  #: equiv
+./mergedHard/EQ_UnchLoopEQ_pos3/libB  #: equiv
+./mergedHard/EQ_UnchLoopEQ_pos2/libA  #: equiv
+./mergedHard/EQ_UnchLoopEQ_pos2/libB  #: equiv
+./mergedHard/EQ_UnchLoopEQ_ltfiveBound/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_ltfiveBound/libB #: equiv
+./mergedHard/EQ_UnchLoopEQ_one/libA   #: equiv
+./mergedHard/EQ_UnchLoopEQ_one/libB   #: not equiv
+./mergedHard/EQ_UnchLoopEQ_LoopUnreach20/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_LoopUnreach20/libB #: equiv
+./mergedHard/EQ_UnchLoopEQ_is_prime2/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_multipleBound/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_multipleBound/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_pos/libA   #: equiv
+./mergedHard/EQ_UnchLoopEQ_pos/libB   #: not equiv
+./mergedHard/EQ_UnchLoopEQ_ltfive/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_ltfive/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_multiple/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_multiple/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_Const/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_Const/libB #: equiv
+./mergedHard/EQ_UnchLoopEQ_oneBound/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_oneBound/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_is_prime3/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_is_prime3/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_is_prime1/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_is_prime1/libB #: not equiv
+./mergedHard/EQ_UnchLoopEQ_divide/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_divide/libB #: equiv
+./mergedHard/EQ_UnchLoopEQ_UnchLoop/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_UnchLoopEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_UnchLoopEQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_UnchLoopEXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_UnchLoopEXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_UnchLoopEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_UnchLoopEXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EQ_LoopMult20NEQ_getSign/libA #: equiv
+./mergedHard/EQ_LoopMult20NEQ_getSign/libB #: not equiv
+./mergedHard/EQ_LoopMult20NEQ_LoopUnreach20/libA #: equiv
+./mergedHard/EQ_LoopMult20NEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EQ_LoopMult20NEQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_LoopMult20NEQ_LoopMult20/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_oneN2/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_oneN2/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_getSign2/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_getSign2/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_Add/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_Add/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_odd/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_odd/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_pos3/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_pos3/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_pos2/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_pos2/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_ltfiveBound/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_ltfiveBound/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_one/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_one/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_LoopUnreach20/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_LoopUnreach20/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_is_prime2/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_is_prime2/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_multipleBound/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_multipleBound/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_pos/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_pos/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_ltfive/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_ltfive/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_multiple/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_multiple/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_Const/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_Const/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_oneBound/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_oneBound/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_is_prime3/libA #: not equiv
+./mergedHard/EQ_LoopMult20EQ_is_prime3/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_is_prime1/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_is_prime1/libB #: not equiv
+./mergedHard/EQ_LoopMult20EQ_divide/libA #: not equiv
+./mergedHard/EQ_LoopMult20EQ_divide/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_UnchLoop/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_UnchLoop/libB #: equiv
+./mergedHard/EQ_LoopMult20EQ_LoopMult20/libA #: equiv
+./mergedHard/EQ_LoopMult20EQ_LoopMult20/libB #: equiv
+./mergedHard/EQ_LoopMult20EXTRA_prime_sum/libA #: equiv
+./mergedHard/EQ_LoopMult20EXTRA_prime_sum/libB #: not equiv
+./mergedHard/EQ_LoopMult20EXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EQ_LoopMult20EXTRA_ultra_prime_sum/libB #: not equiv
+./mergedHard/EXTRA_prime_sumNEQ_getSign/libA #: not equiv
+./mergedHard/EXTRA_prime_sumNEQ_getSign/libB #: not equiv
+./mergedHard/EXTRA_prime_sumNEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EXTRA_prime_sumNEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EXTRA_prime_sumNEQ_LoopMult20/libA #: not equiv
+./mergedHard/EXTRA_prime_sumNEQ_LoopMult20/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_oneN2/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_oneN2/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_getSign2/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_getSign2/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_Add/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_Add/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_odd/libA #: equiv
+./mergedHard/EXTRA_prime_sumEQ_odd/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_pos3/libA #: equiv
+./mergedHard/EXTRA_prime_sumEQ_pos3/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_pos2/libA #: equiv
+./mergedHard/EXTRA_prime_sumEQ_pos2/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_ltfiveBound/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_ltfiveBound/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_one/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_one/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_LoopUnreach20/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_is_prime2/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_is_prime2/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_multipleBound/libA #: equiv
+./mergedHard/EXTRA_prime_sumEQ_multipleBound/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_pos/libA #: equiv
+./mergedHard/EXTRA_prime_sumEQ_pos/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_ltfive/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_ltfive/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_multiple/libA #: equiv
+./mergedHard/EXTRA_prime_sumEQ_multiple/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_Const/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_Const/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_oneBound/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_oneBound/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_is_prime3/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_is_prime3/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_is_prime1/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_is_prime1/libB #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_divide/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_divide/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_UnchLoop/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_UnchLoop/libB #: equiv
+./mergedHard/EXTRA_prime_sumEQ_LoopMult20/libA #: not equiv
+./mergedHard/EXTRA_prime_sumEQ_LoopMult20/libB #: equiv
+./mergedHard/EXTRA_prime_sumEXTRA_prime_sum/libA #: equiv
+./mergedHard/EXTRA_prime_sumEXTRA_prime_sum/libB #: equiv
+./mergedHard/EXTRA_prime_sumEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EXTRA_prime_sumEXTRA_ultra_prime_sum/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumNEQ_getSign/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumNEQ_getSign/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumNEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumNEQ_LoopUnreach20/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumNEQ_LoopMult20/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumNEQ_LoopMult20/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_oneN2/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_oneN2/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_getSign2/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_getSign2/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_Add/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_Add/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_odd/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_odd/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_pos3/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_pos3/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_pos2/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_pos2/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_ltfiveBound/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_ltfiveBound/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_one/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_one/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_LoopUnreach20/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_LoopUnreach20/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_is_prime2/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_is_prime2/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_multipleBound/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_multipleBound/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_pos/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_pos/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_ltfive/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_ltfive/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_multiple/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_multiple/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_Const/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_Const/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_oneBound/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_oneBound/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_is_prime3/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_is_prime3/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_is_prime1/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_is_prime1/libB #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_divide/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_divide/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_UnchLoop/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_UnchLoop/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_LoopMult20/libA #: not equiv
+./mergedHard/EXTRA_ultra_prime_sumEQ_LoopMult20/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEXTRA_prime_sum/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEXTRA_prime_sum/libB #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEXTRA_ultra_prime_sum/libA #: equiv
+./mergedHard/EXTRA_ultra_prime_sumEXTRA_ultra_prime_sum/libB #: equiv
+./eq/Add                            #: equiv
+./eq/Const                          #: equiv
+./eq/LoopMult20                     #: equiv
+./eq/LoopUnreach20                  #: equiv
+./eq/UnchLoop                       #: equiv
+./eq/divide                         #: equiv
+./eq/getSign2                       #: equiv
+./eq/is_prime1                      #: equiv
+./eq/is_prime2                      #: not equiv
+./eq/is_prime3                      #: equiv
+./eq/ltfive                         #: not equiv
+./eq/ltfiveBound                    #: equiv
+./eq/multiple                       #: not equiv
+./eq/multipleBound                  #: equiv
+./eq/odd                            #: equiv
+./eq/one                            #: not equiv
+./eq/oneBound                       #: equiv
+./eq/oneN2                          #: not equiv
+./eq/pos                            #: equiv
+./eq/pos2                           #: equiv
+./eq/pos3                           #: equiv
+./extras/prime_sum                  #: equiv
+./extras/ultra_prime_sum            #: equiv
+./neq/LoopMult20                    #: not equiv
+./neq/LoopUnreach20                 #: not equiv
+./neq/getSign                       #: not equiv

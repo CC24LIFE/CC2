@@ -1,0 +1,6 @@
+"Resource: /home/fengnick/CLEVER+/CC2/deps/mlscript/instKlee.ml": "\025AC&\182\169\211\131\226o\145\184^\001\200H"
+"Rule: ocaml: ml & cmi -> cmx & o (%=instKlee )": "\242\170\201\2559\223W\238\196\020,\199J\194\0077"
+"Rule: ocaml: cmx & o -> cmxs (%=instKlee )": "~\133B(\179\230-\163\205\",\203{\191\1730"
+"Rule: ocaml: ml -> cmo & cmi (%=instKlee )": "\203ExI\179\147\178\002\007\243\2183\192\191+\183"
+"Rule: ocaml dependencies ml (%=instKlee )": "&\254\029\1331g\222S\208\164\179\195\208\184\247c"
+"Rule: ocaml: cmo* -> cma (%=instKlee )": "ERD\221\250\157P4g\0164m\205,\187\016"

@@ -1,0 +1,12 @@
+### Starting build.
+# Target: instKlee.ml.depends, tags: { extension:ml, file:instKlee.ml, ocaml, ocamldep, package(cil), quiet }
+ocamlfind ocamldep -package cil -modules instKlee.ml > instKlee.ml.depends # cached
+# Target: instKlee.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:instKlee.cmo, file:instKlee.ml, implem, ocaml, package(cil), quiet }
+ocamlfind ocamlc -c -package cil -o instKlee.cmo instKlee.ml # cached
+# Target: instKlee.cma, tags: { byte, dont_link_with, extension:cma, file:instKlee.cma, library, link, ocaml, package(cil), quiet }
+ocamlfind ocamlc -a -package cil instKlee.cmo -o instKlee.cma # cached
+# Target: instKlee.cmx, tags: { compile, extension:cmx, extension:ml, file:instKlee.cmx, file:instKlee.ml, implem, native, ocaml, package(cil), quiet }
+ocamlfind ocamlopt -c -package cil -o instKlee.cmx instKlee.ml # cached
+# Target: instKlee.cmxs, tags: { extension:cmxs, file:instKlee.cmxs, library, link, native, ocaml, package(cil), quiet, shared }
+ocamlfind ocamlopt -shared -package cil instKlee.cmx -o instKlee.cmxs # cached
+# Compilation successful.

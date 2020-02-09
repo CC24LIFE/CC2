@@ -1,0 +1,2 @@
+include CC2/_build/*
+include README.md

@@ -1,0 +1,19 @@
+template = CILLY=cilly
+CLANG=clang
+KLEE=klee
+COPTS=-Wno-attributes
+INSTKLEE=../../_build/instKlee.cma
+# if instKlee has been installed, you can also use:
+# INSTKLEE=instKlee
+
+export CIL_FEATURES=cil.oneret
+
+.PHONY: all clean
+
+{SOURCENAME}:{SOURCENAME}.c
+	$(CILLY) $(COPTS) --save-temps --noPrintLn -c --load=$(INSTKLEE) --doinstKlee --entry={LIBNAME} --assume="{ASSUMPTIONS}" {SOURCENAME}.c
+	$(CLANG) -emit-llvm -c {SOURCENAME}.cil.c
+	$(KLEE) -entry-point={SOURCENAME} {SOURCENAME}.cil.bc
+
+clean:
+	rm -rf *.o *.i *.cil.* klee-*
