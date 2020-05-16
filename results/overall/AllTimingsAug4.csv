@@ -552,18 +552,18 @@ Instance Name, CC2 Result, CLEVER Result, Reve Result
 ./mergedHard/NEQ_getSignEQ_pos/libA , not equiv; 0.650600, not equiv; 0.198300, not equiv; 0.020000
 ./mergedHard/NEQ_getSignEQ_pos2/libA , not equiv; 0.652900, not equiv; 0.196300, not equiv; 0.020000
 ./mergedHard/NEQ_getSignEXTRA_ultra_prime_sum/libA , not equiv; 2.011400, not equiv; 0.170900, not equiv; 0.020000
-./NewReveInstances/libc/charclass_lookup-strncmp_1 , equiv;  0.32, unknown; 0.0000   ,  unknown; 0.0000   ,     unknown; 0.0000
-./NewReveInstances/libc/charclass_lookup-strncmp_2 , equiv;  0.40, unknown; 0.0000   ,  unknown; 0.0000   ,     unknown; 0.0000
-./NewReveInstances/libc/charclass_lookup-strncmp_3 , equiv;  0.32, unknown; 0.0000   ,  unknown; 0.0000   ,     unknown; 0.0000
-./NewReveInstances/libc/is_printable-strchr_1 , equiv;  1.01, unknown; 0.0000   ,  unknown; 0.0000   , equiv;  1.36
-./NewReveInstances/libc/loadlibrary-stpcpy_1 , equiv;  0.65, unknown; 0.0000   ,  unknown; 0.0000   ,   unknown; 0.0000
-./NewReveInstances/libc/match_string-strcmp , equiv;  0.18, unknown; 0.0000   ,  unknown; 0.0000   ,    unknown; 0.0000
-./NewReveInstances/libc/memmem-libmemchr_1 , equiv;  0.27, unknown; 0.0000   ,  unknown; 0.0000   ,     unknown; 0.0000
-./NewReveInstances/libc/nss_rewrite_field-strpbrk_1 , equiv;  0.28, unknown; 0.0000   ,  unknown; 0.0000   ,    unknown; 0.0000
-./NewReveInstances/libc/nss_rewrite_field-strpbrk_2 , equiv;  0.26, unknown; 0.0000   ,  unknown; 0.0000   ,    unknown; 0.0000
-./NewReveInstances/libc/nss_rewrite_field-strpbrk_3 , equiv;  0.26, unknown; 0.0000   ,  unknown; 0.0000   ,    unknown; 0.0000
-./NewReveInstances/libc/strncpy-memccpy_1 , equiv;  0.16, unknown; 0.0000   ,  unknown; 0.0000   , equiv;  0.69
-./NewReveInstances/libc/strndup-libmemcpy_b , equiv;  22.98, unknown; 0.0000   ,  unknown; 0.0000   , timeout;  300.00
-./NewReveInstances/libc/strtok_r-strcspn , equiv;  0.46, unknown; 0.0000   ,  unknown; 0.0000   , timeout;  300.00
-./NewReveInstances/libc/swrite-libmemcpy_a , equiv;  0.16, unknown; 0.0000   ,  unknown; 0.0000   , timeout;  20.59
-./NewReveInstances/libc/tunables_strdup-sbrk_1 , equiv;  0.18, unknown; 0.0000   ,  unknown; 0.0000   ,         unknown; 0.0000
+./NewReveInstances/libc/charclass_lookup-strncmp_1 , equiv;  0.32, unknown; 0.0000   ,     unknown; 0.0000
+./NewReveInstances/libc/charclass_lookup-strncmp_2 , equiv;  0.40, unknown; 0.0000   ,     unknown; 0.0000
+./NewReveInstances/libc/charclass_lookup-strncmp_3 , equiv;  0.32, unknown; 0.0000   ,     unknown; 0.0000
+./NewReveInstances/libc/is_printable-strchr_1 , equiv;  1.01, unknown; 0.0000   , equiv;  1.36
+./NewReveInstances/libc/loadlibrary-stpcpy_1 , equiv;  0.65, unknown; 0.0000   ,   unknown; 0.0000
+./NewReveInstances/libc/match_string-strcmp , equiv;  0.18, unknown; 0.0000   ,    unknown; 0.0000
+./NewReveInstances/libc/memmem-libmemchr_1 , equiv;  0.27, unknown; 0.0000   ,     unknown; 0.0000
+./NewReveInstances/libc/nss_rewrite_field-strpbrk_1 , equiv;  0.28, unknown; 0.0000   ,    unknown; 0.0000
+./NewReveInstances/libc/nss_rewrite_field-strpbrk_2 , equiv;  0.26, unknown; 0.0000   ,    unknown; 0.0000
+./NewReveInstances/libc/nss_rewrite_field-strpbrk_3 , equiv;  0.26, unknown; 0.0000   ,    unknown; 0.0000
+./NewReveInstances/libc/strncpy-memccpy_1 , equiv;  0.16, unknown; 0.0000   , equiv;  0.69
+./NewReveInstances/libc/strndup-libmemcpy_b , equiv;  22.98, unknown; 0.0000   , timeout;  300.00
+./NewReveInstances/libc/strtok_r-strcspn , equiv;  0.46, unknown; 0.0000   , timeout;  300.00
+./NewReveInstances/libc/swrite-libmemcpy_a , equiv;  0.16, unknown; 0.0000   , timeout;  20.59
+./NewReveInstances/libc/tunables_strdup-sbrk_1 , equiv;  0.18, unknown; 0.0000   ,         unknown; 0.0000
