@@ -728,3 +728,20 @@
 ./neq/LoopMult20                    #: not equiv
 ./neq/LoopUnreach20                 #: not equiv
 ./neq/getSign                       #: not equiv
+./NewReveInstances/libc/charclass_lookup-strncmp_1 #: equiv
+./NewReveInstances/libc/charclass_lookup-strncmp_2 #: equiv
+./NewReveInstances/libc/charclass_lookup-strncmp_3 #: equiv
+./NewReveInstances/libc/is_printable-strchr_1 #: equiv
+./NewReveInstances/libc/loadlibrary-stpcpy_1 #: equiv
+./NewReveInstances/libc/match_string-strcmp #: equiv
+./NewReveInstances/libc/memmem-libmemchr_1 #: equiv
+./NewReveInstances/libc/nss_rewrite_field-strpbrk_1 #: equiv
+./NewReveInstances/libc/nss_rewrite_field-strpbrk_2 #: equiv
+./NewReveInstances/libc/nss_rewrite_field-strpbrk_3 #: equiv
+./NewReveInstances/libc/strncpy-memccpy_1 #: equiv
+./NewReveInstances/libc/strndup-libmemcpy_b #: equiv
+./NewReveInstances/libc/strtok_r-strcspn #: equiv
+./NewReveInstances/libc/strtok_r-strcspn_2 #: equiv
+./NewReveInstances/libc/strtok_r-strcspn_3 #: equiv
+./NewReveInstances/libc/swrite-libmemcpy_a #: equiv
+./NewReveInstances/libc/tunables_strdup-sbrk_1 #: equiv
