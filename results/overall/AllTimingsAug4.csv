@@ -552,7 +552,6 @@ Instance Name, CC2 Result, CLEVER Result, Reve Result
 ./mergedHard/NEQ_getSignEQ_pos/libA , not equiv; 0.650600, not equiv; 0.198300, not equiv; 0.020000
 ./mergedHard/NEQ_getSignEQ_pos2/libA , not equiv; 0.652900, not equiv; 0.196300, not equiv; 0.020000
 ./mergedHard/NEQ_getSignEXTRA_ultra_prime_sum/libA , not equiv; 2.011400, not equiv; 0.170900, not equiv; 0.020000
-
 ./NewReveInstances/libc/charclass_lookup-strncmp_1 , equiv;  0.32, unknown; 0.0000   ,  unknown; 0.0000   ,     unknown; 0.0000
 ./NewReveInstances/libc/charclass_lookup-strncmp_2 , equiv;  0.40, unknown; 0.0000   ,  unknown; 0.0000   ,     unknown; 0.0000
 ./NewReveInstances/libc/charclass_lookup-strncmp_3 , equiv;  0.32, unknown; 0.0000   ,  unknown; 0.0000   ,     unknown; 0.0000
