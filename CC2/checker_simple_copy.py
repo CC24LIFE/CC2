@@ -310,18 +310,18 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
     assumption_set = set()
     post_assertion_set = set()
     pre_assumption_set = set()
-    immediate_caller = immediate_callee.parent
+    #immediate_caller = immediate_callee.parent
     engine = args.engine
     iteration_num = 0
     bmc_incremental = str_to_boolean(args.bmc_incremental)
     hybrid_sovling = str_to_boolean(args.hybrid)
     lock_actions(lock)
-    if (immediate_caller.checked) or immediate_caller.check_leaves():
+    if (immediate_callee.checked) or immediate_callee.check_leaves():
         unclock_actions(lock)
         return True, timer.get_time()
-    immediate_caller.verify_checked()
+    immediate_callee.verify_checked()
     unclock_actions(lock)
-    if immediate_caller.arg_lib is not None:
+    if immediate_callee.arg_lib is not None:
         merged_lib = rewrite_lib_file(base_lib_file, outfile=library_merged_file_name)
         arg_map, arg_list = check_eq(library_merged_file_name, "SEAHORN", get_args_from_lib_file(merged_lib, args.lib),
                                      args.lib, timer,
@@ -330,7 +330,7 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
                                      merged_lib=merged_lib, post_assertion_set=post_assertion_set,
                                      pre_assumption_set=pre_assumption_set, quick_timeout=10)
         if not len(arg_map.keys()) >0:
-            MSCs.append(immediate_caller)
+            MSCs.append(immediate_callee)
             return True, timer.get_time()
 
         else:
@@ -344,8 +344,10 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
                                  merged_lib=merged_lib, post_assertion_set=post_assertion_set,
                                  pre_assumption_set=pre_assumption_set)
 
-    while (len(arg_map.keys()) > 0) and not immediate_caller.check_leaves():
+    while (len(arg_map.keys()) > 0) and not immediate_callee.check_leaves():
+        '''
         write_out_generalizible_lib(merged_lib, library_merged_generalized_file_name_extension, lib_name=args.lib)
+        
         pe = generalizer.generalize(library_merged_generalized_file_name, args.lib, arg_map[args.lib], timer=timer, lock=makeLock)
         old_assumption_size = len(assumption_set)
         assumption_set.add(pe.get_parition())
@@ -361,58 +363,62 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
                                        hybrid_sovling=False)
 
         if (len(carg_map.keys()) > 0):
-            print("Find counter example with the current caller, now grow")
-            if immediate_caller.parent is None:
-                if validate_cex:
-                    result = validator.validate(args.old, args.new, args.client, args.lib, carg_map[args.client], index = prefix_index)
-                    if (result == 0):
-                        print("CEX validation result : Success")
-                    elif (result == 1):
-                        print ("CEX validation result: Fail")
-                        # block the current CEX and try again
-                        refine_library(merged_lib, assumption_set, post_assertion_set, pre_assumption_set,
-                                       outfile=library_merged_file_name, lib_name = args.lib)
+        '''
+        print("Find counter example with the current caller, now grow")
+        if immediate_callee.parent is None:
+            if validate_cex:
+                result = validator.validate(args.old, args.new, args.client, args.lib, arg_map[args.lib], index = prefix_index)
+                if (result == 0):
+                    print("CEX validation result : Success")
+                elif (result == 1):
+                    print ("CEX validation result: Fail")
+                    # block the current CEX and try again
+                    refine_library(merged_lib, assumption_set, post_assertion_set, pre_assumption_set,
+                                   outfile=library_merged_file_name, lib_name = args.lib)
 
-                        arg_map, arg_list = check_eq(library_merged_file_name, engine,
-                                                     get_args_from_lib_file(merged_lib, args.lib), args.lib,
-                                                     timer, assumption_set, args.unwind, bmc_incremental, r_max_depth,
-                                                     hybrid_sovling=hybrid_sovling,
-                                                     merged_lib=merged_lib, post_assertion_set=post_assertion_set,
-                                                     pre_assumption_set=pre_assumption_set, force_seahorn=force_seahorn)
-                        continue
-
-                    elif (result == 2):
-                        print("CEX validation: Unknown")
-                        
-                print("Grow out of context, CEX")
-                early_stop = True
-                return  False, timer.get_time()
-            else:
-                merged_lib = rewrite_lib_file(immediate_caller.lib_node, outfile=library_merged_file_name)
-                immediate_caller = immediate_caller.parent
-                lock_actions(lock)
-                if (immediate_caller.checked) or immediate_caller.check_leaves():
-                    unclock_actions(lock)
-                    return True, timer.get_time()
-                immediate_caller.verify_checked()
-                unclock_actions(lock)
-                assumption_set = set()
-                post_assertion_set = set()
-                pre_assumption_set = set()
-                # check previous CEX immediately in the new librray and client
-                if immediate_caller.arg_lib is None:
-                    arg_map, arg_list = carg_map, carg_list
-                    arg_map[args.lib] = arg_map[args.client]
-                else:
-                    arg_map, arg_list = check_eq(library_merged_file_name, engine, get_args_from_lib_file(merged_lib, args.lib), args.lib,
-                                                 timer,
-                                                 assumption_set, args.unwind, bmc_incremental, r_max_depth,
+                    arg_map, arg_list = check_eq(library_merged_file_name, engine,
+                                                 get_args_from_lib_file(merged_lib, args.lib), args.lib,
+                                                 timer, assumption_set, args.unwind, bmc_incremental, r_max_depth,
                                                  hybrid_sovling=hybrid_sovling,
                                                  merged_lib=merged_lib, post_assertion_set=post_assertion_set,
                                                  pre_assumption_set=pre_assumption_set, force_seahorn=force_seahorn)
+                    continue
+
+                elif (result == 2):
+                    print("CEX validation: Unknown")
+
+            print("Grow out of context, CEX")
+            early_stop = True
+            return  False, timer.get_time()
+        else:
+            immediate_callee = immediate_callee.parent
+            merged_lib = rewrite_lib_file(immediate_callee.lib_node, outfile=library_merged_file_name)
+            #immediate_caller = immediate_caller.parent
+            lock_actions(lock)
+            if (immediate_callee.checked) or immediate_callee.check_leaves():
+                unclock_actions(lock)
+                return True, timer.get_time()
+            immediate_callee.verify_checked()
+            unclock_actions(lock)
+            assumption_set = set()
+            post_assertion_set = set()
+            pre_assumption_set = set()
+            # check previous CEX immediately in the new librray and client
+            '''
+            if immediate_callee.arg_lib is None:
+                arg_map, arg_list = arg_map, arg_list
+                arg_map[args.lib] = arg_map[args.client]
+            else:
+            '''
+            arg_map, arg_list = check_eq(library_merged_file_name, engine, get_args_from_lib_file(merged_lib, args.lib), args.lib,
+                                             timer,
+                                             assumption_set, args.unwind, bmc_incremental, r_max_depth,
+                                             hybrid_sovling=hybrid_sovling,
+                                             merged_lib=merged_lib, post_assertion_set=post_assertion_set,
+                                             pre_assumption_set=pre_assumption_set, force_seahorn=force_seahorn)
 
 
-
+        '''
         else:
             print("Iteration %d UNSAT" % iteration_num)
             if g_klee_file is not None:
@@ -434,14 +440,15 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
                                          hybrid_sovling=hybrid_sovling,
                                          merged_lib=merged_lib, post_assertion_set=post_assertion_set,
                                          pre_assumption_set=pre_assumption_set, force_seahorn=force_seahorn)
+        '''
 
     # We have proved CSE for a lib call-site, mark all verified callers and move on
     lock_actions(lock)
-    immediate_caller.verify_checked()
-    immediate_caller.mark_leaves()
+    immediate_callee.verify_checked()
+    immediate_callee.mark_leaves()
     unclock_actions(lock)
     # add the current caller to MSC
-    MSCs.append(immediate_caller)
+    MSCs.append(immediate_callee)
     return True, timer.get_time()
 
 def rewrite_lib_file(new_lib, outfile = "merged.c"):
@@ -1862,14 +1869,15 @@ def merge_files (path_old, path_new, client, lib ,lib_eq_assetion=True):
 
     client_index = 0;
     for i in range ( len(changed_clients)):
+        cur_dir = "client_%d" % i
         node_object = changed_clients[i]
         while (node_object is not None and not node_object.processed):
             node_object.processed = True
             print("client " + str(client_index + 1))
-            print(generator.visit(node_object.node))
+            #print(generator.visit(node_object.node))
             if (node_object is not None and node_object.node != node_object.lib_node):
                 node_object.lib_node = version_merge_lib(node_object.lib_node, lib, old_lib_copy, new_lib_copy, ult =uitlity_class)
-                #print(generator.visit(node_object.lib_node))
+                print(generator.visit(node_object.lib_node))
             #print ()
             node_object = node_object.parent
             client_index+=1
@@ -1892,8 +1900,12 @@ def version_merge_lib(lib_node, lib, og_lib_old, og_lib_new, ult=[]):
     old_lib = copy.deepcopy(lib_node)
     renamer = lib_invoc_renamer(lib, "new")
     renamer.visit(new_lib)
-    renamer.version = "old"
+    renamer = lib_invoc_renamer(lib, "old")
     renamer.visit(old_lib)
+    old_lib.decl.name += '_old'
+    old_lib.decl.type.type.declname += "_old"
+    new_lib.decl.name += '_new'
+    new_lib.decl.type.type.declname += "_new"
     merged_lib, return_num = merge_libs(old_lib, new_lib)
     merged_lib.decl.name = lib
     function_rename(merged_lib, lib)
@@ -1915,13 +1927,13 @@ def version_merge_lib(lib_node, lib, og_lib_old, og_lib_new, ult=[]):
             main_function.body.block_items.append(copy.deepcopy(item))
             arg_list.append(c_ast.ID(name=item.name))
     main_function.body.block_items.append(c_ast.FuncCall(name=c_ast.ID(name= merged_lib.decl.name), args=c_ast.ExprList(exprs=arg_list)))
-    m_file = c_ast.FileAST(ext=(ult + [main_function, merged_lib, lib_old, lib_new]))
+    m_file = c_ast.FileAST(ext=(ult + [main_function, old_lib, new_lib, lib_old, lib_new]))
 
     return m_file
 
 
 def version_merge_client(client, lib):
-    new_client = copy.deepcopy(client)
+    new_client = client
     old_client = copy.deepcopy(client)
 
     renamer = lib_invoc_renamer(lib, "new")

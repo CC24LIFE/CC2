@@ -148,6 +148,8 @@ def launch_klee_cex(sourcefile, lib_args, library="lib", unwind= 1000, timer=Non
                 timer.end()
                 return {}, lib_args, pe, False
             timer.end()
+            if result.returncode < 0:
+                raise subprocess.CalledProcessError(returncode=result.returncode, cmd=args)
             output = result.stdout
             pe_info = result.stderr
             complete = not ("Early termination \n" in pe_info)

@@ -157,10 +157,12 @@ def launch_seahorn_cex(sourcefile, lib_args, infile='tempSMTLIB.smt2', z3output=
             process = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True,
                                     timeout=timeout)
         except subprocess.TimeoutExpired:
-            print("Seahorn timeout")
+            print("generalization timeout")
             if timer is not None:
                 timer.end()
             return {}, lib_args
+        if process.returncode < 0:
+            raise subprocess.CalledProcessError(returncode=process.returncode, cmd=args)
         result = process.stdout.rstrip().split('\n')[-1]
         if timer is not None:
             timer.end()

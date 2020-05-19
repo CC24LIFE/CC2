@@ -152,6 +152,8 @@ def launch_CBMC_cex(sourcefile, lib_args, infile = 'tempSMTLIB.smt2' ,z3output =
                 proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 try:
                     out, _ = proc.communicate(timeout=timeout)
+                    if proc.returncode < 0:
+                        raise subprocess.CalledProcessError(returncode=proc.returncode, cmd= args)
                 except subprocess.TimeoutExpired:
                     print("CBMCTO")
                     proc.kill()

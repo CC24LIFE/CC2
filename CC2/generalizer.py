@@ -96,6 +96,8 @@ def generalize_client(source, clientname, is_inlined = True, num_ret=1, lib_name
     result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     if timer is not None:
         timer.end()
+    if result.returncode < 0:
+        raise subprocess.CalledProcessError(returncode=result.returncode, cmd=args)
     output = result.stderr
     new_pe = PEClientPair(output, num_ret, is_inlined)
     #print(new_pe.get_client_specific_assertions())
@@ -177,16 +179,17 @@ class LibPreInvoVisitor(c_ast.NodeVisitor):
                         self.new_hit = True
                     grandparent = self.parent_child.get(parent, None)
                     if grandparent is not None and isinstance(grandparent, c_ast.Compound):
-                        for i in range(len(node.args.exprs)):
-                            input_variable_name = "input_{d}_".format(d=self.arg_list[i].name)+post_fix
-                            input_variable = c_ast.ID(name="input_{d}_".format(d=self.arg_list[i].name)+post_fix)
-                            self.tobeInsertedBefore.append((grandparent, parent, c_ast.Decl(name=input_variable_name, quals=[], storage=[], init=None, funcspec=[],
-                       bitsize=None,
-                       type=c_ast.TypeDecl(declname=input_variable_name, quals=[],
-                                           type=c_ast.IdentifierType(['int'])))))
-                            self.tobeInsertedBefore.append((grandparent, parent, make_klee_symbolic(input_variable_name, input_variable_name)))
-                            self.tobeInsertedBefore.append((grandparent, parent, c_ast.Assignment(op='=',lvalue=input_variable, rvalue= node.args.exprs[i])))
-                            self.invoc.append((grandparent, parent))
+                        if node.args is not None:
+                            for i in range(len(node.args.exprs)):
+                                input_variable_name = "input_{d}_".format(d=self.arg_list[i].name)+post_fix
+                                input_variable = c_ast.ID(name="input_{d}_".format(d=self.arg_list[i].name)+post_fix)
+                                self.tobeInsertedBefore.append((grandparent, parent, c_ast.Decl(name=input_variable_name, quals=[], storage=[], init=None, funcspec=[],
+                           bitsize=None,
+                           type=c_ast.TypeDecl(declname=input_variable_name, quals=[],
+                                               type=c_ast.IdentifierType(['int'])))))
+                                self.tobeInsertedBefore.append((grandparent, parent, make_klee_symbolic(input_variable_name, input_variable_name)))
+                                self.tobeInsertedBefore.append((grandparent, parent, c_ast.Assignment(op='=',lvalue=input_variable, rvalue= node.args.exprs[i])))
+                                self.invoc.append((grandparent, parent))
 
 
     def work(self):
