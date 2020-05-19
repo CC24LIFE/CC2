@@ -49,6 +49,14 @@ make install
 pip install pycparser
 ```
 
+#### Reve-based Examples:
+7. Install Reve through Docker: https://github.com/mattulbrich/llreve/tree/master/reve/reve#docker
+
+8. Install Z3 4.5.0 release (w/ Duality engine):  https://github.com/Z3Prover/z3/releases/tag/z3-4.5.0
+
+9. Record absolute paths, and replace lines 4, 5 in check_reve.py with absolute paths to Reve, Z3 4.5.0 binaries, respectively:  https://github.com/CC24LIFE/CC2/blob/master/CC2/check_reve.py#L4
+
+<!-- 10. Clone pycparser (https://github.com/eliben/pycparser/) and replace lines 1837, 1840 with absolute local path to "pycparser/utils/fake_libc_include": https://github.com/CC24LIFE/CC2/blob/master/CC2/checker_simple.py#L1837 --!>
 
 ### Install CC2:
 ```
