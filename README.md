@@ -88,3 +88,6 @@ python3 CC2/check_reve.py --clientname="verify_this" --dir={base_path_to_reve_ta
 ```bash
 CC2 --new=instances/eq/ultra_prime_sum/new.c --old=/instances/eq/ultra_prime_sum/old.c --lib=lib --client=client --engine=CBMC --unwind=20 --concurrent=True --hybrid-solving=True 
 ```
+```bash
+CC2 --old=benchmarks/NewReveInstances/libc/charclass_lookup-strncmp_1_1.c --new=benchmarks/NewReveInstances/libc/charclass_lookup-strncmp_1_2.c --lib=strncmp --client=charclass_lookup && python3 CC2/check_reve.py --clientname="verify_this" --dir="$(pwd)"
+```
