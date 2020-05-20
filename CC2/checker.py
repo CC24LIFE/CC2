@@ -68,8 +68,7 @@ class Timer(object):
 
 def replace_bit_vector(input):
             return input.replace("bvsrem", "%").replace("bvslt", "<").replace("bvult","<").\
-                replace("bvsle", "<=").replace("bvule","<=").replace("bvsgt", ">").\
-                replace("bvugt", ">").replace("bvsge", ">=").replace("bvuge",">=").replace("bvudiv", '/').replace("extract0", "")
+                replace("bvsle", "<=").replace("bvule","<=").replace("bvsgt", ">").replace("bvugt", ">").replace("bvsge", ">=").replace("bvuge",">=").replace("bvudiv",'/').replace("bvdiv",'/').replace("extract0", "")
 
 
 def constant_zero():
@@ -98,10 +97,9 @@ def get_args_from_lib_file(node, lib_name="lib"):
     for i in range(1, len(node.ext)):
         lib_node = node.ext[i]
         if isinstance(lib_node, c_ast.FuncDef) and lib_node.decl.name == lib_name:
-            if lib_node.decl.type.args is not None:
-                for arg in lib_node.decl.type.args.params:
-                    if isinstance(arg, c_ast.Decl):
-                        signature_list.append(arg.name)
+            for arg in lib_node.decl.type.args.params:
+                if isinstance(arg, c_ast.Decl):
+                    signature_list.append(arg.name)
             return signature_list
 
 
@@ -178,7 +176,7 @@ def check_eq(file_name, engine, library_arg, library_name, timer, assumption_set
         else:
             timeout_binding[key] = True
             if (engine==KLEE and merged_lib is not None and should_refine):
-                refine_library(merged_lib, assumption_set, post_assertion_set, pre_assumption_set, lib_name= library_name)
+                refine_library(merged_lib, assumption_set, post_assertion_set, pre_assumption_set)
             engine = SEAHORN
             continue
 
@@ -354,7 +352,7 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
             force_seahorn[0] = True
 
         restricted_c_file, old_lib_string, new_lib_string, main_func, g_klee_file, pre_cond_file, \
-        inlined, num_ret, param_list, client_params = restrict_libraries(merged_lib, pe, immediate_caller.node, merged_outfile =client_merged_file_name, lib_name = args.lib)
+        inlined, num_ret, param_list, client_params = restrict_libraries(merged_lib, pe, immediate_caller.node, merged_outfile =client_merged_file_name)
 
         carg_map, carg_list = check_eq(restricted_c_file, engine, parse_name_from_decl_list(client_params),
                                        client_name, timer, set(), args.unwind, bmc_incremental, r_max_depth,
@@ -371,7 +369,7 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
                         print ("CEX validation result: Fail")
                         # block the current CEX and try again
                         refine_library(merged_lib, assumption_set, post_assertion_set, pre_assumption_set,
-                                       outfile=library_merged_file_name, lib_name = args.lib)
+                                       outfile=library_merged_file_name)
 
                         arg_map, arg_list = check_eq(library_merged_file_name, engine,
                                                      get_args_from_lib_file(merged_lib, args.lib), args.lib,
@@ -416,18 +414,18 @@ def CheckMLCs(immediate_callee, base_lib_file, args, client_name, MSCs, prefix_i
         else:
             print("Iteration %d UNSAT" % iteration_num)
             if g_klee_file is not None:
-                write_out_generalizible_client(g_klee_file, client_merged_generalized_file_extension, False, lib_name=args.client)
+                write_out_generalizible_client(g_klee_file, client_merged_generalized_file_extension, False, lib_name=args.lib)
                 cpe = generalizer.generalize_client(client_merged_generalized_file, args.client, inlined, num_ret, lib_name=args.lib,
                                                     timer=timer, lock=makeLock)
                 if (len(post_assertion_set) == 0):
                     post_assertion_set.update(cpe.get_base_assumption())
                 post_assertion_set.update(cpe.get_post_assertion_list())
             if pre_cond_file is not None and len(pre_assumption_set) == 0:
-                write_out_generalizible_client(pre_cond_file, client_merged_precond_file_extension, True, lib_name=args.client)
+                write_out_generalizible_client(pre_cond_file, client_merged_precond_file_extension, True, lib_name=args.lib)
                 ppe = generalizer.generalize_pre_client(client_merged_precond_file, args.client, inlined, num_ret,
                                                         param_list, lib_name=args.lib, timer=timer, lock=makeLock)
                 pre_assumption_set.update(ppe.get_preconditions())
-            refine_library(merged_lib, assumption_set, post_assertion_set, pre_assumption_set, outfile=library_merged_file_name, lib_name=args.lib)
+            refine_library(merged_lib, assumption_set, post_assertion_set, pre_assumption_set, outfile=library_merged_file_name)
 
             arg_map, arg_list = check_eq(library_merged_file_name, engine, get_args_from_lib_file(merged_lib, args.lib), args.lib,
                                          timer, assumption_set, args.unwind, bmc_incremental, r_max_depth,
@@ -453,7 +451,7 @@ def rewrite_lib_file(new_lib, outfile = "merged.c"):
 
 
 
-def refine_library(m_file, assumptions, post_assertion, pre_assumptions, outfile="merged.c", lib_name ="lib"):
+def refine_library(m_file, assumptions, post_assertion, pre_assumptions, outfile="merged.c"):
     m_file_copy = copy.deepcopy(m_file)
     parser = c_parser.CParser()
     for assume in assumptions:
@@ -462,37 +460,33 @@ def refine_library(m_file, assumptions, post_assertion, pre_assumptions, outfile
         hackie_assume = "int a = (" + replace_bit_vector(assume.replace("false", "0").replace("true", "1")) +");"
         ass_node = (parser.parse(hackie_assume).ext[0].init)
         new_expr = c_ast.If(cond=ass_node, iftrue=c_ast.Return(expr=constant_zero()), iffalse=None)
-        DFV = FuncDefVisitor(lib_name)
-        DFV.visit(m_file_copy)
-        lib_node = DFV.container
-        lib_node.body.block_items.insert(0, new_expr)
+        m_file_copy.ext[1].body.block_items.insert(0, new_expr)
 
     if (len(post_assertion) >0):
         #remove existing assertions:
-        for index in range(len(lib_node.body.block_items)-1, 0, -1):
-            node = lib_node.body.block_items[index]
+        for index in range(len(m_file_copy.ext[1].body.block_items)-1, 0, -1):
+            node = m_file_copy.ext[1].body.block_items[index]
             if isinstance(node, c_ast.FuncCall):
                 if (node.name.name == "assert"):
-                    lib_node.body.block_items.pop(index)
+                    m_file_copy.ext[1].body.block_items.pop(index)
                     continue
             break
         if len(pre_assumptions) > 0:
             hackie_pre_assumption_string ="int a = !(" + replace_bit_vector(('|'.join(list(pre_assumptions))).replace("false", "0").replace("true", "1")) +");"
             pre_ass_node = (parser.parse(hackie_pre_assumption_string).ext[0].init)
             pre_ass_expr =  c_ast.If(cond=pre_ass_node, iftrue=c_ast.Return(expr=constant_zero()), iffalse=None)
-            lib_node.body.block_items.insert(0, pre_ass_expr)
+            m_file_copy.ext[1].body.block_items.insert(0, pre_ass_expr)
 
-        post_assertion = cleanup(post_assertion)
         hackie_post_assertion_string = "int a = (" + replace_bit_vector(('|'.join(list(post_assertion))).replace("false", "0").replace("true", "1")) +");"
         assertion_node = (parser.parse(hackie_post_assertion_string).ext[0].init)
-        lib_node.body.block_items.append(c_ast.FuncCall(name=c_ast.ID(name="assert"), args=assertion_node))
+        m_file_copy.ext[1].body.block_items.append(c_ast.FuncCall(name=c_ast.ID(name="assert"), args=assertion_node))
 
     #check if there's any undefined variables
     DUV = client_context_encapsulator.DUVisitor()
-    DUV.visit(lib_node)
+    DUV.visit(m_file_copy.ext[1])
     for missing_def in DUV.missing_define:
         type = get_variable_type(missing_def)
-        lib_node.body.block_items.insert(0,
+        m_file_copy.ext[1].body.block_items.insert(0,
             c_ast.Decl(name=missing_def, quals=[], storage=[], init=None, funcspec=[],
                        bitsize=None,
                        type=c_ast.TypeDecl(declname=missing_def, quals=[],
@@ -506,45 +500,16 @@ def refine_library(m_file, assumptions, post_assertion, pre_assumptions, outfile
         merged_out.write(result_string)
     return 0;
 
-def cleanup(assertions):
-    new_assertions = set()
-    for assertion in assertions:
-        if not (assertion is None or len(assertion) == 0):
-            new_assertions.add(assertion)
 
-    return new_assertions
-
-
-def restrict_libraries(lib_file, pe, client, old_lib_string=None, new_lib_string=None, main_func = None, merged_outfile ="client_merged.c" , option="CBMC", lib_name = "lib"):
+def restrict_libraries(lib_file, pe, client, old_lib_string=None, new_lib_string=None, main_func = None, merged_outfile ="client_merged.c" , option="CBMC"):
     global  Return_bindings
     global  r_max_depth
     klee_file = None
     pre_cond_file = None
-    DFV = FuncDefVisitor(lib_name)
-    DFV.visit(lib_file)
-    origin_lib = DFV.container
-    lib = copy.deepcopy(origin_lib)
+    origin_lib = lib_file.ext[1]
+    lib = copy.deepcopy(lib_file.ext[1])
     is_inlined = False
     #create base line library version
-    forbidden_list = [client.decl.name, lib_name]
-    util_file = copy.deepcopy(lib_file)
-    main_holder = None
-    if (isinstance(util_file, c_ast.FileAST)):
-        index = 0
-        while index < len(util_file.ext):
-            item = util_file.ext[index]
-            if isinstance(item, c_ast.FuncDef):
-                if (item.decl.name in forbidden_list):
-                    util_file.ext.pop(index)
-                    continue
-                elif item.decl.name == "main":
-                    main_holder = item
-                    util_file.ext.pop(index)
-                    continue
-
-            index += 1
-
-
     if (old_lib_string is None or new_lib_string is None):
         lib_copy = copy.deepcopy(lib)
         lib_copy.body.block_items = []
@@ -559,10 +524,9 @@ def restrict_libraries(lib_file, pe, client, old_lib_string=None, new_lib_string
         new_lib_string_orig = generator.visit(lib_new)
         #create invo template
         param_list = []
-        if lib_old.decl.type.args is not None:
-            for lib_arg in lib_old.decl.type.args.params:
-                if isinstance(lib_arg, c_ast.Decl):
-                    param_list.append(c_ast.ID(name=lib_arg.name))
+        for lib_arg in lib_old.decl.type.args.params:
+            if isinstance(lib_arg, c_ast.Decl):
+                param_list.append(c_ast.ID(name=lib_arg.name))
 
         lib_old_invo = c_ast.FuncCall(name=c_ast.ID(name=lib_old.decl.name), args=c_ast.ExprList(exprs=param_list))
         lib_new_invo = c_ast.FuncCall(name=c_ast.ID(name=lib_new.decl.name), args=c_ast.ExprList(exprs=param_list))
@@ -639,14 +603,12 @@ def restrict_libraries(lib_file, pe, client, old_lib_string=None, new_lib_string
     c_file_string =""
     if (option == "CBMC" and main_func is None):
         params = client.decl.type.args
-        if main_holder is None:
-            main_function = copy.deepcopy(client)
-            main_function.decl.name = "main"
-            main_function.decl.type.type.declname = "main"
-            main_function.decl.type.args = None
-            main_function.body.block_items = []
-        else:
-            main_function = main_holder
+
+        main_function = copy.deepcopy(client)
+        main_function.decl.name = "main"
+        main_function.decl.type.type.declname = "main"
+        main_function.decl.type.args = None
+        main_function.body.block_items = []
         arg_list = []
         if params is not None:
             for item in params.params:
@@ -670,26 +632,26 @@ def restrict_libraries(lib_file, pe, client, old_lib_string=None, new_lib_string
 
         pre_cond_file =  merged_outfile.rstrip(".c") + "_pre_cond" +".c"
         with open(pre_cond_file, 'w') as pre_condition_file:
-            pre_condition_file.write((generator.visit(util_file)) + c_file_string+ pre_client_string)
+            pre_condition_file.write(c_file_string+ pre_client_string)
 
         klee_file = merged_outfile.rstrip(".c") + "_klee" +".c"
         with open(klee_file, 'w') as outfile_klee:
-            outfile_klee.write((generator.visit(util_file)) + c_file_string+ klee_client_string)
+            outfile_klee.write(c_file_string+ klee_client_string)
         is_inlined = True
     c_file_string += client_string
     if (ret_binding is None):
         pre_cond_file = merged_outfile.rstrip(".c") + "_pre_cond" + ".c"
         with open(pre_cond_file, 'w') as pre_condition_file:
-            pre_condition_file.write((generator.visit(util_file)) + c_file_string)
+            pre_condition_file.write(c_file_string)
 
         klee_file = merged_outfile.rstrip(".c") + "_klee" + ".c"
         c_file_string += ((old_lib_string) + "\n")
         c_file_string += ((new_lib_string) +"\n")
         is_inlined = False
         with open(klee_file, 'w') as outfile_klee:
-            outfile_klee.write((generator.visit(util_file)) + c_file_string)
+            outfile_klee.write(c_file_string)
     with open(merged_outfile, 'w') as outfile:
-        outfile.write((generator.visit(util_file)) + c_file_string)
+        outfile.write(c_file_string)
     return merged_outfile, old_lib_string, new_lib_string, main_function, klee_file, pre_cond_file, is_inlined, num_ret, param_list, params
 
 
@@ -705,13 +667,13 @@ def write_out_generalizible_client_imp(merged_file, filename):
                     new_nodes.append(node)
     for old_node in old_nodes:
         merged_client.decl.type.args.params.append(c_ast.Decl(name=old_node.name, quals=[], storage=[], init=None, funcspec=[], bitsize=None,
-                                                       type=c_ast.TypeDecl(declname=old_node.name, quals=[], type=c_ast.IdentifierType(get_type(old_node)))))
+                                                       type=c_ast.TypeDecl(declname=old_node.name, quals=[], type=c_ast.IdentifierType(['int']))))
         merged_client.body.block_items.remove(old_node)
         merged_client.body.block_items.insert(0, c_ast.Assignment(op='=', lvalue=c_ast.ID(name=old_node.name), rvalue=constant_zero()))
     for new_node in new_nodes:
         merged_client.decl.type.args.params.append(
             c_ast.Decl(name=new_node.name, quals=[], storage=[], init=None, funcspec=[], bitsize=None,
-                       type=c_ast.TypeDecl(declname=new_node.name, quals=[], type=c_ast.IdentifierType(get_type(old_node)))))
+                       type=c_ast.TypeDecl(declname=new_node.name, quals=[], type=c_ast.IdentifierType(['int']))))
         merged_client.body.block_items.remove(new_node)
         merged_client.body.block_items.insert(0, c_ast.Assignment(op='=', lvalue=c_ast.ID(name=new_node.name),
                                                                   rvalue=constant_zero()))
@@ -736,9 +698,7 @@ def write_out_generalizible_lib(merged_file, filename, should_copy = True, preco
         new_merged_file = copy.deepcopy(merged_file)
     else:
         new_merged_file = merged_file
-    DFV = FuncDefVisitor(lib_name, prefix=True)
-    DFV.visit(new_merged_file)
-    merged_lib = DFV.container
+    merged_lib = new_merged_file.ext[1]
     old_nodes= []
     new_nodes= []
     for node in merged_lib.body.block_items:
@@ -754,7 +714,7 @@ def write_out_generalizible_lib(merged_file, filename, should_copy = True, preco
         merged_lib.decl.type.args = c_ast.ParamList([])
     for old_node in old_nodes:
         merged_lib.decl.type.args.params.append(c_ast.Decl(name=old_node.name, quals=[], storage=[], init=None, funcspec=[], bitsize=None,
-                                                       type=c_ast.TypeDecl(declname=old_node.name, quals=[], type=c_ast.IdentifierType(get_type(old_node)))))
+                                                       type=c_ast.TypeDecl(declname=old_node.name, quals=[], type=c_ast.IdentifierType(['int']))))
         merged_lib.body.block_items.remove(old_node)
         merged_lib.body.block_items.insert(0, c_ast.Assignment(op='=', lvalue=c_ast.ID(name=old_node.name),
                                                                   rvalue=constant_zero()))
@@ -762,7 +722,7 @@ def write_out_generalizible_lib(merged_file, filename, should_copy = True, preco
     for new_node in new_nodes:
         merged_lib.decl.type.args.params.append(
             c_ast.Decl(name=new_node.name, quals=[], storage=[], init=None, funcspec=[], bitsize=None,
-                       type=c_ast.TypeDecl(declname=new_node.name, quals=[], type=c_ast.IdentifierType(get_type(new_node)))))
+                       type=c_ast.TypeDecl(declname=new_node.name, quals=[], type=c_ast.IdentifierType(['int']))))
         merged_lib.body.block_items.remove(new_node)
         merged_lib.body.block_items.insert(0, c_ast.Assignment(op='=', lvalue=c_ast.ID(name=new_node.name),
                                                                   rvalue=constant_zero()))
@@ -775,12 +735,7 @@ def write_out_generalizible_lib(merged_file, filename, should_copy = True, preco
 
 
     generator = c_generator.CGenerator()
-    #new_merged_file.ext.pop(0)
-    DFV = FuncDefVisitor("main")
-    DFV.visit(new_merged_file)
-    main_func = DFV.container
-    if main_func is not None:
-        main_func.body.block_items.pop()
+    new_merged_file.ext.pop(0)
     with open(filename, "w") as merged_g_file:
         merged_g_file.write(generator.visit(new_merged_file))
     return new_merged_file
@@ -829,16 +784,12 @@ class LastVisitor(c_ast.NodeVisitor):
 
 
 class FuncDefVisitor(c_ast.NodeVisitor):
-    def __init__(self, target, prefix=False):
+    def __init__(self, target):
         self.target = target
         self.container = None
-        self.prefix = prefix
 
     def visit_FuncDef(self, node):
         if (self.container is None and node.decl.name == self.target):
-            self.container = node
-            return
-        elif (self.prefix and ( node.decl.name == self.target + "_old" or node.decl.name == self.target + "_new") ):
             self.container = node
             return
 '''
@@ -912,29 +863,6 @@ class IDhunterRaw(c_ast.NodeVisitor):
 class DataSynVisitor(c_ast.NodeVisitor):
     def __init__(self, updateMap):
         self.update_map = updateMap
-        self.parent_child = {}
-        self.toupdate ={}
-
-    def reset(self):
-        self.toupdate = {}
-
-    def syncData(self, node, parent, index=0):
-        self.reset()
-        self.visit(node, parent, index)
-        self.update_exp()
-
-    def update_exp(self):
-        for key in self.toupdate.keys():
-            value = self.toupdate[key]
-            key_parent = self.parent_child.get(key, None)
-            child = key
-            while (key_parent is not None and not isinstance(key_parent, c_ast.Compound)):
-                child = key_parent
-                key_parent = self.parent_child.get(key, None)
-
-            if (key_parent is not None and isinstance(key_parent, c_ast.Compound)):
-                child_index = key_parent.block_items.index(child)
-                key_parent.block_items.insert(child_index+1, value)
 
     def visit_Assignment(self, node, parent, index):
         if node.rvalue is not None and not isinstance(node.rvalue, c_ast.ID):
@@ -973,10 +901,7 @@ class DataSynVisitor(c_ast.NodeVisitor):
                         old_op = node.op;
                         for target in update_targets:
                             if (old_op.startswith('p')):
-                                new_node = copy.deepcopy(node)
-                                new_node.expr = c_ast.ID(name = target)
-                                self.toupdate[node] = new_node
-                                #node = c_ast.UnaryOp(expr = c_ast.Assignment(lvalue=c_ast.ID(name = target) , rvalue=node, op='='), op=old_op)
+                                node = c_ast.UnaryOp(expr = c_ast.Assignment(lvalue=c_ast.ID(name = target) , rvalue=node, op='='), op=old_op)
                             else:
                                 node =c_ast.Assignment(lvalue=c_ast.ID(name=target), rvalue=node, op='=')
                         if isinstance(parent, c_ast.Compound):
@@ -1031,10 +956,8 @@ class DataSynVisitor(c_ast.NodeVisitor):
         """
         counter = 0
         for c in node:
-            self.parent_child[c] = node
             self.visit(c, node, counter)
             counter+=1
-
 
 
 
@@ -1406,7 +1329,7 @@ def add_new_declares (node, signatures):
 
 
     syn = DataSynVisitor(target_map)
-    syn.syncData(node, None, 0)
+    syn.visit(node, None, 0)
 
 
 
@@ -1820,21 +1743,15 @@ def merge_files (path_old, path_new, client, lib ,lib_eq_assetion=True):
                                                                                                             right=c_ast.ID(name="CLEVER_ret_0_new") )))
         params = merged_lib.decl.type.args
 
-        #check if main function already exists for the neccessary setup
-        FDV = FuncDefVisitor("main")
-        FDV.visit(new_ast)
-        main_function = FDV.container
-        if (main_function is None):
-            main_function = copy.deepcopy(merged_lib)
-            main_function.decl.name ="main"
-            main_function.decl.type.type.declname = "main"
-            main_function.decl.type.args = None
-            main_function.body.block_items=[]
+        main_function = copy.deepcopy(merged_lib)
+        main_function.decl.name ="main"
+        main_function.decl.type.type.declname = "main"
+        main_function.decl.type.args = None
+        main_function.body.block_items=[]
         arg_list = []
-        if params is not None:
-            for item in params.params:
-                main_function.body.block_items.append(copy.deepcopy(item))
-                arg_list.append(c_ast.ID(name = item.name))
+        for item in params.params:
+            main_function.body.block_items.append(copy.deepcopy(item))
+            arg_list.append(c_ast.ID(name = item.name))
         main_function.body.block_items.append(c_ast.FuncCall(name=c_ast.ID(name =lib), args=c_ast.ExprList(exprs = arg_list)))
         m_file = c_ast.FileAST(ext=(uitlity_class + [main_function, merged_lib]))
 
@@ -1921,7 +1838,7 @@ def version_merge_lib(lib_node, lib, og_lib_old, og_lib_new, ult=[]):
 
 
 def version_merge_client(client, lib):
-    new_client = copy.deepcopy(client)
+    new_client = client
     old_client = copy.deepcopy(client)
 
     renamer = lib_invoc_renamer(lib, "new")
@@ -1958,11 +1875,11 @@ def function_rename(function_node, name):
 def get_type(function_node):
     if isinstance(function_node, c_ast.FuncDef):
         fun_type = function_node.decl.type
-    else:
-        fun_type = function_node.type
-    while not isinstance(fun_type, c_ast.IdentifierType):
-        fun_type = fun_type.type
-    return copy.deepcopy(fun_type.names)
+        while not isinstance(fun_type, c_ast.IdentifierType):
+            fun_type = fun_type.type
+        return copy.deepcopy(fun_type.names)
+
+    raise  Exception
 
 
 class DateTypeVisitor(c_ast.NodeVisitor):
